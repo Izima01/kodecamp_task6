@@ -7,7 +7,7 @@ const secretKey = process.env.secretWord;
 const sender = require('../utils/mailer');
 const crypto = require('crypto-js');
 
-route.patch('/', async (req, res) => {
+route.post('/', async (req, res) => {
     try {
         const { email } = req.body;
         const user = await userCollection.findOne({ email });
